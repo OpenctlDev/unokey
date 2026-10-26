@@ -1,0 +1,10 @@
+# UnoKey (Arduino UNO R4 WiFi running the UnoKey firmware).
+# Install:  sudo cp 70-unokey.rules /etc/udev/rules.d/
+#           sudo udevadm control --reload && sudo udevadm trigger
+# then unplug and re-plug the key.
+
+# Security key (FIDO HID) for browsers.
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="006d", TAG+="uaccess"
+
+# Serial port for the UnoKey Vault app. ModemManager must not poke at it.
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="006d", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"

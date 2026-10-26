@@ -1,0 +1,13 @@
+# Build output
+firmware/build/
+app/build/
+app/dist/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+
+# Backups never belong in the repo
+*.unokey
+*.unokey.tmp
