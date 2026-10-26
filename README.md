@@ -1,6 +1,6 @@
 # UnoKey
 
-Create passkeys and a secure vault with UnoKey on your Arduino UNO R4 WiFi.
+Create passkeys and a secure vault with UnoKey on your Arduino (UNO R4 WiFi).
 
 > **Status: experimental hobby project, not security-audited.** It uses standard crypto
 > (P-256, ChaCha20-Poly1305, SHA-256/HMAC, scrypt via BearSSL and Python), but an Arduino has
@@ -49,17 +49,6 @@ With a 4-leg tactile button, use two legs that are diagonally opposite.
 | VRy | **A1** |
 | SW  | **D3** |
 
-```
-          UNO R4 WiFi
-   +---------------------------+
-   |  D2 o----[ BUTTON ]----o GND
-   |  D3 o-------------------- SW  \
-   |  A0 o-------------------- VRx  |
-   |  A1 o-------------------- VRy  |  joystick
-   |  5V o-------------------- +5V  |
-   | GND o-------------------- GND /
-   +---------------------------+
-```
 
 If up/down or left/right come out reversed, flip `JOY_INVERT_Y`, `JOY_INVERT_X` or
 `JOY_SWAP_XY` in `firmware/UnoKey/config.h` and upload again.
